@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #8b5cf6;
+  --color-primary-light: #d8b4fe;
+  --color-accent: #f472b6;
+  --color-bg-light: #fafafa;
+  --color-bg-card: rgba(255, 255, 255, 0.7);
+
+  /* Aurora animation */
+  --animate-aurora: aurora 60s linear infinite;
+
+  @keyframes aurora {
+    from {
+      background-position: 50% 50%, 50% 50%;
+    }
+    to {
+      background-position: 350% 50%, 350% 50%;
+    }
+  }
+
+  /* Gradient text animation */
+  --animate-gradient: gradient 8s linear infinite;
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 200% 50%;
+    }
+  }
+}
+
+/* Aurora CSS variables */
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --transparent: transparent;
+  --blue-500: #3b82f6;
+  --blue-400: #60a5fa;
+  --blue-300: #93c5fd;
+  --indigo-300: #a5b4fc;
+  --violet-200: #ddd6fe;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-light text-slate-800 antialiased selection:bg-primary selection:text-white;
+  }
+}
+
+.glass-card {
+  @apply bg-bg-card backdrop-blur-2xl border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-3xl;
+}
