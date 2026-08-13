@@ -1,158 +1,183 @@
-# 🚀 My Portfolio Website
-
 <div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=250&section=header&text=My%20Developer%20Portfolio%20🌌&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Interactive%203D%20Experiences%20•%20Fluid%20Animations%20•%20Modern%20UI&descAlignY=60&descSize=18" width="100%" />
 
-**A modern, animated, and responsive developer portfolio built with React + Vite**
+  ### A modern, animated, and responsive developer portfolio built from scratch.
 
-[![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
-[![Vite](https://img.shields.io/badge/Vite-8-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vite.dev/)
-[![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![Framer Motion](https://img.shields.io/badge/Framer_Motion-13-FF0055?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
+  <p align="center">
+    <a href="https://portfolio-ivory-six-20.vercel.app" target="_blank">
+      <img src="https://img.shields.io/badge/View%20Live%20Demo-6E40C9?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo" />
+    </a>
+  </p>
 
+  <p align="center">
+    <img src="https://img.shields.io/badge/React_19-20232A?style=flat-square&logo=react&logoColor=61DAFB"/>
+    <img src="https://img.shields.io/badge/Vite_8-B73BFE?style=flat-square&logo=vite&logoColor=FFD62E"/>
+    <img src="https://img.shields.io/badge/Tailwind_v4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white"/>
+    <img src="https://img.shields.io/badge/Framer_Motion-0055FF?style=flat-square&logo=framer&logoColor=white"/>
+    <img src="https://img.shields.io/badge/Three.js-000000?style=flat-square&logo=three.js&logoColor=white"/>
+  </p>
 </div>
 
 ---
 
 ## ✨ Overview
 
-This is my personal developer portfolio website showcasing my projects, skills, and experience as a **Front-End Developer**. The site features a premium "Dark Space Neon" aesthetic with glassmorphism cards, neon glows, and fluid animations — all built from scratch without any UI component library.
+Welcome to my personal developer portfolio! This project is a testament to my passion for front-end development, specifically focusing on creating **premium visual experiences**, **fluid micro-interactions**, and **high-performance architectures**. 
 
-The portfolio was designed and implemented with the assistance of **Google Antigravity AI** (Gemini), which helped with component architecture, animation logic, layout design decisions, and iterative UI refinements throughout the development process.
+The site features a custom **"Dark Space Neon"** aesthetic, heavily utilizing glassmorphism, animated gradient borders, and parallax scrolling, entirely built without reliance on pre-made UI component libraries.
 
 ---
 
-## 🛠️ Tech Stack
+## 🎨 Design Aesthetics & UX
 
-| Category | Technology |
+<table>
+  <tr>
+    <td width="50%">
+      <h3 align="center">🌌 Dark Space Neon Theme</h3>
+      <p>A pure black background (<code>#030303</code>) contrasted with vibrant neon radial glows (purple, cyan, pink) that illuminate the user's path as they scroll through the experience.</p>
+    </td>
+    <td width="50%">
+      <h3 align="center">💎 Glassmorphism Cards</h3>
+      <p>Content is housed within translucent, frosted-glass containers (<code>bg-white/5</code> + <code>backdrop-blur</code>), creating depth and a premium feel without overwhelming the dark theme.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <h3 align="center">🌈 Animated Gradient Borders</h3>
+      <p>Custom CSS keyframes (<code>@keyframes gradientShift</code>) drive cycling gradient border rings on stat cards and buttons, shifting seamlessly from purple to blue to white.</p>
+    </td>
+    <td width="50%">
+      <h3 align="center">🎞️ Fluid Motion</h3>
+      <p>Heavy utilization of <b>Framer Motion</b> for scroll-triggered bidirectional entrance animations, interactive hover scaling, and immersive background parallax effects.</p>
+    </td>
+  </tr>
+</table>
+
+---
+
+## 🌟 Key Features
+
+- **Hero Section:** Full-screen landing featuring an interactive 3D computer model (React Three Fiber), a subtle animated aurora background, and a dynamic typewriter text effect.
+- **Projects Showcase:** An elegant card grid displaying project previews. Each card routes to a dynamic, deeply detailed project page.
+- **Dynamic Project Details:** Per-project pages (e.g., `/project/:id`) that include:
+  - 🖥️ Animated browser-frame screenshot showcases.
+  - 🔄 FE / BE tech stack tab switchers.
+  - 📊 Animated stat cards (Tech Layers, Key Features, Team Size).
+  - 📝 Comprehensive breakdowns of "The Problem", "What it Does", and "My Role".
+- **Responsive Architecture:** A mobile-first approach ensuring the UI scales flawlessly across all device sizes while maintaining complex animations.
+- **Client-Side Routing:** Smooth SPA navigation powered by React Router v7 with automated scroll-to-top behaviors.
+
+---
+
+## 🛠️ Comprehensive Tech Stack
+
+<details open>
+<summary><b>Click to expand technologies</b></summary>
+<br/>
+
+| Domain | Technologies Used |
 |---|---|
-| **Language** | JavaScript (JSX) |
-| **Framework** | React 19 |
-| **Build Tool** | Vite 8 |
+| **Core** | JavaScript (JSX), HTML5, CSS3 |
+| **Framework** | React 19 (Hooks, Functional Components) |
+| **Build & Tooling** | Vite 8, ESLint |
 | **Styling** | Tailwind CSS v4 |
-| **Animations** | Framer Motion 13 |
+| **Animations** | Framer Motion 13, Native CSS Keyframes |
 | **Routing** | React Router DOM v7 |
-| **3D Graphics** | Three.js + React Three Fiber + Drei |
-| **Icons** | Lucide React |
-| **Typewriter Effect** | react-type-animation |
+| **3D Graphics** | Three.js, React Three Fiber, Drei |
+| **Typography & Icons** | Lucide React, react-type-animation |
 | **Utilities** | clsx, tailwind-merge |
 
----
-
-## 🎨 Design System
-
-- **Theme:** Dark Space Neon — pure black background (`#030303`) with vibrant neon radial glows
-- **Cards:** Glassmorphism (`bg-white/5` + `backdrop-blur`)
-- **Borders:** Animated gradient rings (purple → blue → white) cycling with CSS keyframes
-- **Typography:** System font stack with bold gradient text headings
-- **Animations:**
-  - Scroll-triggered bidirectional entrance animations (Framer Motion)
-  - Parallax background movement on scroll
-  - Typewriter effect for hero subtitle
-  - Sparkle/pulse animations on decorative icons
-  - Shimmer hover sweep on interactive cards
+</details>
 
 ---
 
-## 📁 Project Structure
+## 📁 Project Architecture
 
-```
+```text
 my-portfolio/
-├── public/
-│   └── (static assets, PDFs)
+├── public/                 # Static assets, PDFs, favicons
 ├── src/
-│   ├── assets/          # Images and static files
-│   ├── components/      # Reusable UI components
-│   │   ├── ui/          # Design system primitives (NoiseButton, Aurora, etc.)
-│   │   ├── Hero.jsx
-│   │   ├── About.jsx
-│   │   ├── Projects.jsx
-│   │   ├── Skills.jsx
-│   │   ├── Contact.jsx
-│   │   └── Computer3D.jsx
+│   ├── assets/             # Image resources
+│   ├── components/         # Reusable structural components
+│   │   ├── ui/             # Design primitives (Aurora, NoiseButton, etc.)
+│   │   ├── Hero.jsx        # Landing section
+│   │   ├── About.jsx       # Personal introduction
+│   │   ├── Projects.jsx    # Projects grid
+│   │   ├── Skills.jsx      # Skills showcase
+│   │   ├── Contact.jsx     # Contact links/form
+│   │   └── Computer3D.jsx  # Three.js canvas wrapper
 │   ├── data/
-│   │   └── projectsData.js   # Centralized project content
+│   │   └── projectsData.js # Centralized content schema (Single Source of Truth)
 │   ├── pages/
-│   │   └── ProjectDetails.jsx  # Dynamic project detail page
+│   │   └── ProjectDetails.jsx # Dynamic route page component
 │   ├── lib/
-│   │   └── utils.js
-│   ├── App.jsx           # Root with React Router routes
-│   ├── main.jsx
-│   └── index.css
+│   │   └── utils.js        # Helper functions (e.g., tailwind merge wrapper)
+│   ├── App.jsx             # Router definition & Root layout
+│   ├── main.jsx            # React mounting point
+│   └── index.css           # Global styles and custom keyframes
 ├── package.json
 └── vite.config.js
 ```
 
 ---
 
-## 🌟 Key Features
-
-- **Hero Section** — Full-screen landing with 3D computer model (Three.js), animated aurora background, and typewriter text effect
-- **About Me** — Animated gradient text with sparkle icons and personal introduction
-- **Projects** — Card grid with project previews; each card links to a dedicated detail page
-- **Project Detail Pages** — Per-project pages with:
-  - Animated browser-frame screenshot showcase
-  - FE / BE tech stack tab switcher
-  - Key Features pill grid
-  - Animated stat cards (Tech Layers, Key Features, Team Size) with gradient border rings
-  - The Problem & What it Does sections
-  - My Role & Contributions breakdown
-- **Skills** — Categorized skill display
-- **Contact** — Contact form / links section
-- **Routing** — SPA routing with React Router (`/`, `/project/:id`)
-
----
-
 ## 🤖 AI-Assisted Development
 
-This portfolio was built in close collaboration with **Google Antigravity AI (Gemini)**, acting as an AI pair programmer. The AI contributed to:
+This portfolio represents a modern development workflow, built in close collaboration with **Google Antigravity AI (Gemini)** acting as an AI pair programmer. 
 
-- Component architecture and file structure planning
-- Animation design using Framer Motion (`scroll`, `whileInView`, `useTransform`)
-- Layout decisions for the Project Detail page (sticky right column, parallax hero)
-- Gradient border animation technique reused across stat cards and buttons
-- Data schema design for `projectsData.js`
-- Debugging build errors (UTF-8 encoding, asset resolution in Vite)
-- Iterative UI refinements based on screenshot feedback
+**AI Contributions:**
+- Structuring component architecture and React Router implementation.
+- Formulating complex Framer Motion logic (`useScroll`, `useTransform`, stagger children).
+- Implementing reusable aesthetic patterns (e.g., the cycling gradient border technique).
+- Designing the data schema for dynamic content injection (`projectsData.js`).
+- Rapid iterative UI refinement and real-time debugging.
 
 ---
 
 ## 🚀 Getting Started
 
-### Prerequisites
+To run this project locally, follow these steps:
 
-- Node.js v18+
+### Prerequisites
+- Node.js (v18 or higher)
 - npm or yarn
 
-### Installation
+### Installation & Execution
 
 ```bash
-# Clone the repository
-git clone https://github.com/<your-username>/my-portfolio.git
-cd my-portfolio
+# 1. Clone the repository
+git clone https://github.com/CherryMT/portfolio.git
 
-# Install dependencies
+# 2. Navigate to the project directory
+cd portfolio
+
+# 3. Install dependencies
 npm install
 
-# Start the development server
+# 4. Start the development server
 npm run dev
 ```
 
-### Build for Production
+Visit `http://localhost:5173` to view the application.
 
 ```bash
+# 5. Build for production
 npm run build
 ```
 
 ---
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
+## 📫 Connect With Me
 
 <div align="center">
+  <a href="https://portfolio-ivory-six-20.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Portfolio-6E40C9?style=for-the-badge&logo=About.me&logoColor=white"/>
+  </a>
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=phamnguyenminhtri3@gmail.com" target="_blank">
+    <img src="https://img.shields.io/badge/Email_Me-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
+  </a>
+</div>
 
-Made with ❤️ and a lot of ☕ — powered by **React**, **Framer Motion**, and **Google Antigravity AI**
-
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer" width="100%"/>
 </div>
