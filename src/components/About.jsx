@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion } from "framer-motion"
 import { useRef } from "react"
 import { LayoutGrid, FileText, GraduationCap } from "lucide-react"
 import { NoiseButton } from "./ui/noise-button"
@@ -12,51 +12,40 @@ const containerVariants = {
 }
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 60 },
+  hidden: { opacity: 0, y: 50 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] }
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
   }
 }
 
 const fadeLeft = {
-  hidden: { opacity: 0, x: -60 },
+  hidden: { opacity: 0, x: -50 },
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] }
   }
 }
 
 const fadeRight = {
-  hidden: { opacity: 0, x: 60, scale: 0.9 },
+  hidden: { opacity: 0, x: 50 },
   visible: {
     opacity: 1,
     x: 0,
-    scale: 1,
-    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] }
   }
 }
 
 export default function About() {
-  const sectionRef = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"]
-  })
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"])
-
   return (
-    <section ref={sectionRef} className="py-32 overflow-hidden" id="about">
-      {/* Parallax subtle glow blobs */}
-      <motion.div
-        style={{ y: bgY }}
-        className="pointer-events-none absolute inset-0 -z-0"
-      >
+    <section className="py-32 overflow-hidden" id="about">
+      {/* Static glow blobs — no parallax (removed useScroll/useTransform) */}
+      <div className="pointer-events-none absolute inset-0 -z-0">
         <div className="absolute top-[10%] left-[5%] w-[40vw] h-[40vw] max-w-[600px] rounded-full bg-purple-700/10 blur-[120px]" />
         <div className="absolute bottom-[5%] right-[0%] w-[35vw] h-[35vw] max-w-[500px] rounded-full bg-cyan-700/10 blur-[100px]" />
-      </motion.div>
+      </div>
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         {/* Section Header */}
@@ -64,7 +53,7 @@ export default function About() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
           className="text-center mb-20"
         >
           <motion.div
@@ -88,28 +77,9 @@ export default function About() {
             variants={fadeUp}
             className="text-white/50 text-lg flex items-center justify-center gap-2"
           >
-            <motion.span
-              animate={{ opacity: [1, 0.2, 1] }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            >
-              <SparkleIcon />
-            </motion.span>
+            <SparkleIcon />
             Transforming ideas into digital experiences
-            <motion.span
-              animate={{ opacity: [1, 0.2, 1] }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 0.75
-              }}
-            >
-              <SparkleIcon />
-            </motion.span>
+            <SparkleIcon />
           </motion.p>
         </motion.div>
 
@@ -118,7 +88,7 @@ export default function About() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
           className="flex flex-col-reverse lg:flex-row items-center justify-between gap-16 mb-20"
         >
           {/* Left: Text Content */}
@@ -128,7 +98,7 @@ export default function About() {
           >
             {/* Glow behind card */}
             <div className="absolute -inset-4 bg-gradient-to-r from-purple-600/10 to-cyan-600/10 rounded-3xl blur-2xl -z-10" />
-            <div className="bg-white/5 backdrop-blur-xl p-10 rounded-3xl border border-white/10">
+            <div className="bg-white/5 backdrop-blur-sm p-10 rounded-3xl border border-white/10">
               <p className="text-sm font-bold tracking-widest text-purple-400 uppercase mb-2">
                 Hello, I'm
               </p>
@@ -162,28 +132,20 @@ export default function About() {
             className="lg:w-2/5 flex justify-center lg:justify-end"
           >
             <div className="relative">
-              {/* Spinning ring */}
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              {/* Spinning ring — using CSS animation for GPU compositing */}
+              <div
                 className="absolute -inset-3 rounded-full border border-dashed border-purple-500/30"
+                style={{ animation: "spin 20s linear infinite" }}
               />
-              {/* Outer glow */}
-              <motion.div
-                animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                className="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-600/30 to-cyan-600/30 blur-2xl"
-              />
+              {/* Static outer glow — removed pulsing motion to save resources */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-600/20 to-cyan-600/20 blur-2xl" />
               {/* Avatar */}
               <div className="w-80 h-80 md:w-96 md:h-96 rounded-full border-[4px] border-white/20 shadow-2xl overflow-hidden relative z-10">
                 <img
                   src={avatarImg}
                   alt="Minh Tri"
                   className="w-full h-full object-cover object-center scale-105"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -195,7 +157,7 @@ export default function About() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
           className="flex justify-center gap-6 mt-12"
         >
           <StatCard
@@ -222,11 +184,10 @@ function StatCard({ icon, label, value, subLabel, idx = 0 }) {
   return (
     <motion.div
       variants={{
-        hidden: { opacity: 0, y: 40, scale: 0.9 },
+        hidden: { opacity: 0, y: 40 },
         visible: {
           opacity: 1,
           y: 0,
-          scale: 1,
           transition: {
             duration: 0.6,
             delay: idx * 0.15,
@@ -234,12 +195,11 @@ function StatCard({ icon, label, value, subLabel, idx = 0 }) {
           }
         }
       }}
-      whileHover={{ y: -6, scale: 1.02 }}
+      whileHover={{ y: -6 }}
       className="relative group cursor-default"
     >
-      {/* Glow behind card on hover */}
       <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600/0 to-cyan-600/0 group-hover:from-purple-600/20 group-hover:to-cyan-600/20 rounded-3xl blur transition-all duration-500" />
-      <div className="relative bg-white/5 backdrop-blur-md rounded-3xl p-6 flex flex-col w-64 border border-white/10 group-hover:border-white/20 transition-colors">
+      <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-6 flex flex-col w-64 border border-white/10 group-hover:border-white/20 transition-colors">
         <div className="flex items-start justify-between mb-8">
           <div className="p-3 bg-white/10 text-purple-300 rounded-2xl group-hover:bg-purple-600/30 group-hover:text-white transition-colors">
             {icon}

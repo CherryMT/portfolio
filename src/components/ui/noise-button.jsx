@@ -9,22 +9,24 @@ function NoiseCanvas({ className }) {
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     let animId;
+    let frame = 0;
 
     const draw = () => {
+      animId = requestAnimationFrame(draw);
+      // Only redraw every 5 frames (~12fps) instead of 60fps
+      if (++frame % 5 !== 0) return;
       const w = canvas.width;
       const h = canvas.height;
       const imageData = ctx.createImageData(w, h);
       const data = imageData.data;
-
       for (let i = 0; i < data.length; i += 4) {
         const val = Math.random() * 255;
         data[i] = val;
         data[i + 1] = val;
         data[i + 2] = val;
-        data[i + 3] = 18; // very subtle opacity
+        data[i + 3] = 18;
       }
       ctx.putImageData(imageData, 0, 0);
-      animId = requestAnimationFrame(draw);
     };
 
     canvas.width = canvas.offsetWidth;

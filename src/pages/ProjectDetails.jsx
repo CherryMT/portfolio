@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+﻿import { useState, useRef, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import {
@@ -54,7 +54,7 @@ export default function ProjectDetails() {
   return (
     <div className="min-h-screen bg-[#030303] text-white overflow-x-hidden">
 
-      {/* ── HERO SECTION ── */}
+      {/* â”€â”€ HERO SECTION â”€â”€ */}
       <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
         {/* Animated background orbs */}
         <motion.div style={{ y: bgY }} className="absolute inset-0 pointer-events-none">
@@ -80,7 +80,7 @@ export default function ProjectDetails() {
           </motion.button>
 
           <div className="flex flex-col lg:flex-row items-start gap-16">
-            {/* LEFT – Info */}
+            {/* LEFT â€“ Info */}
             <motion.div
               variants={stagger}
               initial="hidden"
@@ -192,7 +192,7 @@ export default function ProjectDetails() {
                   <motion.div key={activeStack}
                     initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }}
                     transition={{ duration: 0.2 }}
-                    className="rounded-2xl overflow-hidden border border-white/8 bg-white/[0.03] backdrop-blur-sm">
+                    className="rounded-2xl overflow-hidden border border-white/8 bg-white/[0.03] backdrop-blur-[4px]">
                     <div className={`px-4 py-2 border-b border-white/5 text-xs font-mono ${activeStack === 'frontend' ? 'text-purple-400' : 'text-cyan-400'}`}>
                       {currentStack.repo}
                     </div>
@@ -217,7 +217,7 @@ export default function ProjectDetails() {
               </motion.div>
             </motion.div>
 
-            {/* RIGHT – Browser screenshot + Key Features */}
+            {/* RIGHT â€“ Browser screenshot + Key Features */}
             <motion.div
               initial={{ opacity: 0, x: 60, rotateY: 8 }}
               animate={{ opacity: 1, x: 0, rotateY: 0 }}
@@ -249,10 +249,10 @@ export default function ProjectDetails() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.6 }}
-                className="bg-white/[0.03] border border-white/8 rounded-2xl p-5 backdrop-blur-sm"
+                className="bg-white/[0.03] border border-white/8 rounded-2xl p-5 backdrop-blur-[4px]"
               >
                 <h3 className="text-sm font-bold text-white/50 uppercase tracking-widest mb-4 flex items-center gap-2">
-                  <span className="text-yellow-400">✨</span> Key Features
+                  <span className="text-yellow-400">âœ¨</span> Key Features
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {project.features.map((f, i) => {
@@ -274,7 +274,7 @@ export default function ProjectDetails() {
         </motion.div>
       </section>
 
-      {/* ── CONTENT SECTIONS ── */}
+      {/* â”€â”€ CONTENT SECTIONS â”€â”€ */}
       <div className="relative">
         {/* Section separator glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[60%] h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent" />
@@ -284,15 +284,15 @@ export default function ProjectDetails() {
           {/* The Problem & What it does */}
           <motion.div
             variants={stagger} initial="hidden" whileInView="visible"
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
             className="grid grid-cols-1 lg:grid-cols-2 gap-8"
           >
             {[
-              { title: 'The Problem', content: project.theProblem, color: 'purple', icon: '🧩' },
-              { title: `What ${project.title} Does`, content: project.whatItDoes, color: 'cyan', icon: '💡' },
+              { title: 'The Problem', content: project.theProblem, color: 'purple', icon: 'ðŸ§©' },
+              { title: `What ${project.title} Does`, content: project.whatItDoes, color: 'cyan', icon: 'ðŸ’¡' },
             ].map((card) => (
               <motion.div key={card.title} variants={fadeUp}
-                className="relative group rounded-3xl p-8 border border-white/8 bg-white/[0.03] backdrop-blur-sm overflow-hidden hover:border-white/15 transition-all duration-500">
+                className="relative group rounded-3xl p-8 border border-white/8 bg-white/[0.03] backdrop-blur-[4px] overflow-hidden hover:border-white/15 transition-all duration-500">
                 {/* Glow on hover */}
                 <div className={`absolute -inset-1 bg-gradient-to-br from-${card.color}-600/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10`} />
                 <div className={`absolute top-0 right-0 w-32 h-32 bg-${card.color}-600/10 rounded-full blur-2xl`} />
@@ -314,8 +314,8 @@ export default function ProjectDetails() {
           {project.myRole && (
             <motion.div
               variants={fadeUp} initial="hidden" whileInView="visible"
-              viewport={{ once: false, amount: 0.2 }}
-              className="relative rounded-3xl border border-white/8 bg-white/[0.03] backdrop-blur-sm p-8 overflow-hidden"
+              viewport={{ once: true, amount: 0.2 }}
+              className="relative rounded-3xl border border-white/8 bg-white/[0.03] backdrop-blur-[4px] p-8 overflow-hidden"
             >
               <div className="absolute top-0 left-0 w-80 h-80 bg-purple-700/10 rounded-full blur-[100px] pointer-events-none" />
               <div className="absolute bottom-0 right-0 w-60 h-60 bg-cyan-700/10 rounded-full blur-[80px] pointer-events-none" />
@@ -327,10 +327,10 @@ export default function ProjectDetails() {
                     transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                     className="text-2xl inline-block"
                   >
-                    ⚡
+                    âš¡
                   </motion.span>
                   <h3 className="text-2xl font-bold">
-                    My Role — <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">{project.myRole.title}</span>
+                    My Role â€” <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">{project.myRole.title}</span>
                   </h3>
                 </div>
                 <p className="text-white/50 mb-8 leading-relaxed">{project.myRole.summary}</p>
@@ -344,7 +344,7 @@ export default function ProjectDetails() {
                       <motion.div key={idx}
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: false }}
+                        viewport={{ once: true }}
                         transition={{ delay: idx * 0.1, duration: 0.5 }}
                         className="flex gap-3 p-4 rounded-2xl bg-white/5 border border-white/8 hover:border-purple-500/30 hover:bg-purple-500/5 transition-all group/item"
                       >

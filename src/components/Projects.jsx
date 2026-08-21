@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ExternalLink, ArrowRight, Code2, FileCode2, Zap, Paintbrush, Layers, 
   Film, Activity, Box, Palette, SquareMousePointer, BarChart3, Network, 
-  FileSpreadsheet, Database, Map, Globe, GitBranch, PenTool, CheckCircle 
+  FileSpreadsheet, Database, Map, Globe, GitBranch, PenTool, CheckCircle, Atom
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { GridBackground } from './ui/grid-dot-background';
@@ -80,7 +80,7 @@ export default function Projects() {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
           variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}
           className="text-center mb-16"
         >
@@ -126,7 +126,7 @@ export default function Projects() {
                 : 'bg-white/5 border border-white/10 text-white/60 hover:bg-white/10 backdrop-blur-sm'
             }`}
           >
-            <span className="text-xl">⚛️</span>
+            <Atom size={20} />
             Tech Stack
           </button>
         </div>
@@ -147,10 +147,10 @@ export default function Projects() {
                   key={idx}
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: false, amount: 0.2 }}
+                  viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.7, delay: idx * 0.15, ease: [0.22, 1, 0.36, 1] }}
                   whileHover={{ y: -8 }}
-                  className="bg-white/5 backdrop-blur-md rounded-3xl overflow-hidden group flex flex-col border border-white/10 hover:border-white/20 hover:shadow-[0_0_40px_rgba(168,85,247,0.15)] transition-all duration-500"
+                  className="bg-white/5 backdrop-blur-sm rounded-3xl overflow-hidden group flex flex-col border border-white/10 hover:border-white/20 hover:shadow-[0_0_40px_rgba(168,85,247,0.15)] transition-all duration-500"
                 >
                   {/* Image Area */}
                   <div className={`h-56 w-full relative overflow-hidden flex items-center justify-center bg-white/5`}>
@@ -191,10 +191,10 @@ export default function Projects() {
                   key={idx}
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: false, amount: 0.2 }}
+                  viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.6, delay: idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
                   whileHover={{ y: -6 }}
-                  className="bg-white/5 backdrop-blur-md rounded-3xl p-8 border border-white/10 hover:border-white/20 hover:shadow-[0_0_30px_rgba(99,102,241,0.1)] transition-all duration-400 min-w-[300px] flex-1 max-w-md"
+                  className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 hover:border-white/20 hover:shadow-[0_0_30px_rgba(99,102,241,0.1)] transition-all duration-400 min-w-[300px] flex-1 max-w-md"
                 >
                   <h3 className="text-lg font-bold text-primary mb-6">{cat.name}</h3>
                   <div className="flex flex-wrap gap-3">
